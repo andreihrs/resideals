@@ -27,7 +27,7 @@ export class GMap extends Component {
 
   render() {
     const mapStyles = {
-      width: '50%',
+      width: '100%',
       height: '70%',
     };
 

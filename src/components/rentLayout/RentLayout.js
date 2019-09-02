@@ -11,12 +11,24 @@ import ListingsList from '../listingsList/ListingsList';
 export default class RentLayout extends Component {
   render() {
     return (
-      <div className="container">
+      <Container className="full-width">
         <Header />
-        <FiltersBar />
-        <ListingsList />
-        <GMap className="item-a"/>
-      </div>
+        <hr />
+        <Row>
+          <FiltersBar />
+        </Row>
+        <hr />
+        <Row>
+          <Col md={6} className="map">
+            <div className="ml-30">
+            <GMap />
+            </div>
+          </Col>
+          <Col md={6}>
+            <ListingsList />
+          </Col>  
+        </Row>
+      </Container>
     )
   }
 }

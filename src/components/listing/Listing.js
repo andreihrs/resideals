@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
+import './Listing.css';
+import apt from '../../media/apartments.jpg';
 
 const Listing = (props) => {
   return (
-    <div>
-      <h1>Hi from this little listing {props.value}</h1>
+    <div className="listing">
+      <img src={apt} />
+      <p>Hi from this little listing {props.value}</p>
     </div>
   )
 }
-
 export default Listing

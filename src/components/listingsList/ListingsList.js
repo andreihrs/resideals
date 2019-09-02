@@ -6,7 +6,7 @@ const ListingsList = () => {
   
   return (
     <div>
-      <h1>Real Estate & Homes for Rent</h1>
+      <h2>Real Estate & Homes for Rent</h2>
       {words.map(item => 
         <Listing value={item} key={item}/>)}
     </div>
