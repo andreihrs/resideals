@@ -1,4 +1,4 @@
-import Listing from'../listing/Listing';
+// import { CardListing } from '../cardListing/CardListing';
 import React from 'react'
 
 const ListingsList = () => {
@@ -7,8 +7,8 @@ const ListingsList = () => {
   return (
     <div>
       <h2>Real Estate & Homes for Rent</h2>
-      {words.map(item => 
-        <Listing value={item} key={item}/>)}
+      {/* {words.map(item => 
+        <CardListing value={item} key={item}/>)} */}
     </div>
   )
 }
