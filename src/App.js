@@ -1,24 +1,11 @@
 import React from 'react';
 import './App.css';
-import Header from './components/header/Header';
+import NavHeader from './components/navheader/NavHeader';
 import Hero from './components/hero/Hero';
 import HomePage from './components/homePage/homePage';
-import { Box, Button, Heading, Grommet } from 'grommet';
-import { Notification } from 'grommet-icons';
-
-const AppBar = (props) => (
-  <Box 
-    tag='header'
-    direction='row'
-    align='center'
-    justify='between'
-    background='brand'
-    pad={{ left: 'medium', right: 'small', vertical: 'small' }}
-    elevation='medium'
-    style={{zIndex: '1'}}
-    {...props}
-  />
-);
+import Footer from './components/footer/Footer';
+import { Box, Button, Collapsible, Heading, Grommet, Layer, ResponsiveContext, Text } from 'grommet';
+import { FormClose, Notification } from 'grommet-icons';
 
 
 const theme = {
@@ -35,31 +22,29 @@ const theme = {
 };
 
 class App extends React.Component {
-  state = {
-    showSidebar: false,
-  }
-  
+  constructor() {
+    super();
+    this.state = {
+      showSidebar: true
+    }
+  }  
+
   render() {
-    return (
+    return(
+      // <HomePage />
       <Grommet theme={theme} full>
-        <AppBar>
-          <Heading level='3' margin='none'>RESIDEALS</Heading>
-          <Button icon={<Notification />} onClick={() => {}} />
-        </AppBar>
-        <Box direction='row' flex overflow={{ horizontal: 'hidden' }}>
-          <Box flex align='center' justify='center'>
-            app body
-          </Box>
-          <Box
-            width='medium'
-            background='light-2'
-            elevation='small'
-            align='center'
-            justify='center'>
-              sidebar
-          </Box>
+        <NavHeader color="brand"/>
+        <Hero />
+        <Box
+          align="center"
+          pad="large">
+          <h1>Explore the neighborhoods</h1>
+          <Text> Take a deep dive and see what awaits you on the other side </Text>
         </Box>
-        {/* <HomePage /> */}
+        <Box a11yTitle="neighborhood cards">
+          
+        </Box>
+        <Footer />
       </Grommet>
     );
   }

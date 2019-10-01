@@ -7,9 +7,23 @@ const Marketing = ({ setScreen}) => {
   const [layer, setLayer] = React.useState()
   return (
   <Grommet style={{"height":"100vh"}}>
-    <Box style={{"minHeight": "100vh"}} background={{"color":"dark-1"}} style={{"minHeight":"100vh"}} fill="vertical" overflow="auto">
-      <Grid columns={["flex",["large","xlarge"],"flex"]} rows={["auto"]} areas={[{"name":"center","start":[1,0],"end":[1,0]}]}>
-        <Box align="center" justify="between" pad="medium" flex={false} direction="row" gridArea="center">
+    <Box 
+      style={{"minHeight": "100vh"}} 
+      background={{"color":"dark-1"}} 
+      style={{"minHeight":"100vh"}} 
+      fill="vertical" 
+      overflow="auto">
+      <Grid 
+        columns={["flex",["large","xlarge"],"flex"]} 
+        rows={["auto"]} 
+        areas={[{"name":"center","start":[1,0],"end":[1,0]}]}>
+        <Box 
+          align="center" 
+          justify="between" 
+          pad="medium" 
+          flex={false} 
+          direction="row" 
+          gridArea="center">
           <Box align="center" direction="row" gap="medium">
             <Ad  />
             <Text size="large">

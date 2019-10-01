@@ -1,23 +1,38 @@
 import React from 'react';
-import './SearchBar.css'
-import Form from 'react-bootstrap/Form';
-import Col from 'react-bootstrap/Col';
+import { FormSearch } from 'grommet-icons';
+import { Box, Stack, TextInput } from 'grommet';
 
 const SearchBar = () => {
+  const suggestions = Array(100)
+  .fill()
+  .map((_, i) => `suggestion ${i + 1}`);
+
+  const [value, setValue] = React.useState("");
+
+  const onChange = event => setValue(event.target.value);
+  const onSelect = event => setValue(event.suggestion);
+
   var styleForm = {
+    background: '#FFF',
     width: '100%',
     height: '40px',
     borderRadius: '5px',
-    zIndex: 100,
     margin: '0',
     marginTop: '22%',
   };
 
   return (
-    <>
-       <Form.Control type="text" placeholder="Enter an address, neighborhood or city" class="search-bar" style={styleForm}/>
-       <i class="fa fa-search" style={{zIndex: 300, color: 'black'}}></i>
-    </>
+    <Box width='medium'>
+       <TextInput 
+        value={value}
+        onChange={onChange}
+        onSelect={onSelect}
+        suggestions={suggestions}
+        style={styleForm}
+        dropProps={{ height: "small" }}
+        placeholder="Enter the city, neighborhood or public transport" />
+       <FormSearch color='black' />
+    </Box>
   )
 }
 
