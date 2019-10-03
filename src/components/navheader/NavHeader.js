@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../../media/resideal.png';
 import './Header.css';
-import { Box, Grid } from 'grommet';
+import { Anchor, Box, Grid } from 'grommet';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -39,7 +39,9 @@ const NavHeader = (color) => {
           <InlineItem><StyledLink to ='/rent'>Rent</StyledLink></InlineItem>
           <InlineItem><StyledLink to ='/'>Sell</StyledLink></InlineItem>
         </ul>
+        <Anchor href="/">
         <img src={logo} alt="logo" className="image" />
+        </Anchor>
         <ul className="userFeatures">
           <InlineItem><StyledLink to ='/'>Saved homes</StyledLink></InlineItem>
           <InlineItem><StyledLink to ='/'>Saved searches</StyledLink></InlineItem>

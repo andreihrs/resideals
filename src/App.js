@@ -1,9 +1,10 @@
 import React from 'react';
-import './App.css';
+// import './App.css';
 import NavHeader from './components/navheader/NavHeader';
-import Hero from './components/hero/Hero';
+import Hero from './components/homePage/hero/Hero';
 import HomePage from './components/homePage/homePage';
 import Footer from './components/footer/Footer';
+import NeighborSection from './components/homePage/neighborSection/NeighborSection';
 import { Box, Button, Collapsible, Heading, Grommet, Layer, ResponsiveContext, Text } from 'grommet';
 import { FormClose, Notification } from 'grommet-icons';
 
@@ -41,8 +42,8 @@ class App extends React.Component {
           <h1>Explore the neighborhoods</h1>
           <Text> Take a deep dive and see what awaits you on the other side </Text>
         </Box>
-        <Box a11yTitle="neighborhood cards">
-          
+        <Box a11yTitle="neighborhood cards" >
+          <NeighborSection />
         </Box>
         <Footer />
       </Grommet>
