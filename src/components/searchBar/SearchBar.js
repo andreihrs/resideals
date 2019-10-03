@@ -1,6 +1,22 @@
 import React from 'react';
 import { FormSearch } from 'grommet-icons';
-import { Box, Stack, TextInput } from 'grommet';
+import { Box, Grid, TextInput } from 'grommet';
+import styled from 'styled-components';
+
+const GridBox = styled(Box)`
+  display: grid;
+`
+
+const GridText = styled(Box)`
+  grid-column: 1 / 4;
+  grid-row: 1 / 4;
+`
+
+const GridIcon = styled(Box)`
+  z-index: 100;
+  grid-column: 3;
+  grid-row: 2 / span 1;
+`
 
 const SearchBar = () => {
   const suggestions = Array(100)
@@ -14,16 +30,16 @@ const SearchBar = () => {
 
   var styleForm = {
     background: '#FFF',
-    width: '100%',
     height: '40px',
     borderRadius: '5px',
     margin: '0',
-    marginTop: '22%',
   };
 
   return (
-    <Box width='medium'>
+    <GridBox margin={{left: '50px'}}>
+      <GridText overflow="auto" width="80%">
        <TextInput 
+        size="small"
         value={value}
         onChange={onChange}
         onSelect={onSelect}
@@ -31,8 +47,11 @@ const SearchBar = () => {
         style={styleForm}
         dropProps={{ height: "small" }}
         placeholder="Enter the city, neighborhood or public transport" />
-       <FormSearch color='black' />
-    </Box>
+      </GridText>
+        <GridIcon>
+       <FormSearch color='black' size="medium" />
+       </GridIcon>
+    </GridBox>
   )
 }
 

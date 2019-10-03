@@ -35,9 +35,9 @@ const NavHeader = (color) => {
         flex={false}
         >
         <ul>
-          <InlineItem><StyledLink to='/'>Buy</StyledLink></InlineItem>
+          <InlineItem><StyledLink to='/buy'>Buy</StyledLink></InlineItem>
           <InlineItem><StyledLink to ='/rent'>Rent</StyledLink></InlineItem>
-          <InlineItem><StyledLink to ='/'>Sell</StyledLink></InlineItem>
+          <InlineItem><StyledLink to ='/mortgage'>Mortgage</StyledLink></InlineItem>
         </ul>
         <Anchor href="/">
         <img src={logo} alt="logo" className="image" />

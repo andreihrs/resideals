@@ -7,13 +7,22 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import RentLayout from './components/rentLayout/RentLayout';
 import NotFound from './components/notfound/notfound';
+import NeighborhoodPage from './components/neighborhoodPage/NeighborhoodPage';
 
 const routing = (
   <Router>
     <div>
       <Switch>
         <Route exact path="/" component={App} />
-        <Route path="/rent" component={RentLayout} />
+        <Route 
+          path="/rent" 
+          render={(props) => <RentLayout {...props} title={"Rent"}/>} />
+        <Route 
+          path='/buy' 
+          render={(props) => <RentLayout {...props} title={"Sale"}/>} />
+        <Route 
+          path='/neighborhood'
+          component={NeighborhoodPage} />
         <Route component={NotFound} />
       </Switch>
     </div>

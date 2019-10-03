@@ -1,6 +1,6 @@
 import React from 'react'
 import Neighborhood from './neighborhood/Neighborhood';
-import { Box } from 'grommet';
+import { Box, Button } from 'grommet';
 import apartment from './../../../media/apartments.jpg';
 import unsplash from './../../../media/unsplash.jpg'
 import neighborhood1 from './../../../media/listing1.jpg'
@@ -30,9 +30,11 @@ const neighborSection = () => {
       round="small"
       overflow="hidden">
         <Box alignSelf="center" margin={{right: "1rem"}}>
+          <Button>
           <Previous />
+          </Button>
         </Box>
-        <Box >
+        <Box>
         <Neighborhood imag={apartment}/>
         </Box>
         <Neighborhood imag={unsplash}/>
@@ -42,7 +44,7 @@ const neighborSection = () => {
         <Box alignSelf="center" margin={{right: "1rem"}}>
         <Next />
         </Box>
-        <Neighborhood imag={neighborhood2} />
+        {/* <Neighborhood imag={neighborhood2} /> */}
       </Box>
   )
 }

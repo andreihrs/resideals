@@ -10,7 +10,7 @@ const ColImg = styled(Box)`
   width: 50%;
 `;
 
-const ListingsList = () => {
+const ListingsList = (props) => {
   const allListings = [
     {
       id: "1",
@@ -56,7 +56,7 @@ const ListingsList = () => {
 
   return (
     <Box width="100%" direction="column" >
-      <Heading level="3">Real Estate & Homes for Rent</Heading>
+      <Heading level="3">Real Estate & Homes for {props.title}</Heading>
       <Text>{allListings.length} results</Text>
       <Box direction="row-responsive" wrap="true">
       <InfiniteScroll items={allListings}>

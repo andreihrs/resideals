@@ -11,6 +11,7 @@ const StyledStack = styled(Stack)`
 const Title = styled.h1`
   color: #FFFFFF;
   margin-top: 15%;
+  margin-bottom: 5%;
 `;
 
 const Image = styled.img`

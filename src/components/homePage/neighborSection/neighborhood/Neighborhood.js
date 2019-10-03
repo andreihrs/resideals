@@ -1,6 +1,10 @@
 import React from 'react';
-import { Box, Grid, Image, Stack, Text } from 'grommet';
+import { Anchor, Box, Grid, Image, Stack, Text } from 'grommet';
 import styled from 'styled-components';
+
+const StyledAnchor = styled(Anchor)`
+  text-decoration: none;
+`;
 
 const GridDiv = styled(Box)`
   display: grid;
@@ -22,17 +26,19 @@ const GridCta = styled(Box)`
 `;
 
 
-const Neighborhood = ({ imag }) => {
+const Neighborhood = ({ imag, isFiveMultiple }) => {
   return (
-      <GridDiv>
-        <GridImg>
-        <Image src={imag}  />
+    // fill vertical, vertical -> fit - cover ca sa maresc ambele div uri si sa maresc imaginea
+    // Am facut cu grid ca sa impart imaginea in 3 si sa pun text peste 
+      <GridDiv> 
+        <GridImg >
+        <Image src={imag}/>
         </GridImg>
         <GridTxt>
         <Text color="white" margin="1rem" size="large">Dorobanti</Text>  
         </GridTxt>
         <GridCta>
-          <Text color="white" margin="1rem" size="large">Check the Neighborhood</Text>
+          <StyledAnchor color="white" margin="1rem" size="large" href="/neighborhood" >Check the Neighborhood</StyledAnchor>
         </GridCta>
       </GridDiv>
   )

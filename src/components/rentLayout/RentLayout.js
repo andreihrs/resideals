@@ -6,7 +6,7 @@ import FiltersBar from './filters/FiltersBar';
 import ListingsList from './listingsList/ListingsList';
 import Footer from './../footer/Footer';
 
- const RentLayout = () => {
+ const RentLayout = (props) => {
     return (
       <Box
         fill="vertical"
@@ -28,7 +28,7 @@ import Footer from './../footer/Footer';
               <GMap/>
           </Box>
           <Box margin="15px" width="60%" overflow={{"vertical": "scroll"}}>
-            <ListingsList />
+            <ListingsList title={props.title}/>
             <Footer />
           </Box>
         </Box>
