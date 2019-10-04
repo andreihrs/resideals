@@ -1,9 +1,16 @@
 import React from 'react';
-import { Anchor, Box, Grid, Image, Stack, Text } from 'grommet';
+import { Anchor, Box, Image, Text } from 'grommet';
 import styled from 'styled-components';
+import { Next } from 'grommet-icons';
 
 const StyledAnchor = styled(Anchor)`
   text-decoration: none;
+  color: white;
+  font-weight: normal;
+
+  :hover {
+    text-decoration: none;
+  }
 `;
 
 const GridDiv = styled(Box)`
@@ -38,7 +45,7 @@ const Neighborhood = ({ imag, isFiveMultiple }) => {
         <Text color="white" margin="1rem" size="large">Dorobanti</Text>  
         </GridTxt>
         <GridCta>
-          <StyledAnchor color="white" margin="1rem" size="large" href="/neighborhood" >Check the Neighborhood</StyledAnchor>
+          <StyledAnchor color="white" margin="1rem" size="medium" href="/neighborhood" >Check the Neighborhood <Next /></StyledAnchor>
         </GridCta>
       </GridDiv>
   )

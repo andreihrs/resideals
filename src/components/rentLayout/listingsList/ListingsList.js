@@ -55,25 +55,10 @@ const ListingsList = (props) => {
   ];
 
   return (
-    <Box width="100%" direction="column" >
+    <Box width="100%" direction="column">
       <Heading level="3">Real Estate & Homes for {props.title}</Heading>
       <Text>{allListings.length} results</Text>
       <Box direction="row-responsive" wrap="true">
-      <InfiniteScroll items={allListings}>
-      {(item, index) => (
-        <Box
-          pad="small"
-          key={index}
-          direction="row"
-        >
-          <CardListing
-            key={item.id} 
-            home={item}  />
-        </Box>      
-      )}
-    </InfiniteScroll>
-    </Box>
-    <Box direction="row-responsive" wrap="true">
       <InfiniteScroll items={allListings}>
       {(item, index) => (
         <Box
