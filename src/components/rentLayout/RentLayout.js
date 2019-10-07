@@ -6,10 +6,12 @@ import FiltersBar from './filters/FiltersBar';
 import ListingsList from './listingsList/ListingsList';
 import Footer from './../footer/Footer';
 import { Close } from 'grommet-icons';
+import AptModal from './aptModal/AptModal';
 
  const RentLayout = (props) => {
-  const [show, setShow] = React.useState();
-    return (
+  const [show, setShow] = React.useState(false);
+
+  return (
       <Box
         fill="vertical"
       >
@@ -31,29 +33,19 @@ import { Close } from 'grommet-icons';
               {/* <GMap style={{position: 'fixed'}}/> */}
           </Box>
           <Box margin="15px" width="60%">
-            <ListingsList title={props.title}/>
+            <ListingsList title={props.title} setShow={setShow}/>
             <Footer />
             <ListingsList title={props.title}/>
           </Box>
         </Box>
         <Box>
-      <Button label="show" onClick={() => setShow(true)} />
-      {show && (
-        <Layer
-          onEsc={() => setShow(false)}
-          onClickOutside={() => setShow(false)}
-          full="true"
-          margin={{right: 'xlarge', left: 'xlarge'}}
-        >
-          <h1>Overview</h1>
-          <Button style={{position: 'absolute', top: '0', right: '0'}} onClick={() => setShow(false)}>
-            <Close />
-          </Button>
-        </Layer>
-      )}
+      {show && 
+        <AptModal 
+          setShow={setShow}
+          show={show}/>}
     </Box>
       </Box>
-    );
+  );
 }
 
 export default RentLayout;

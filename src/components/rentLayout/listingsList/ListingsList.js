@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Heading, InfiniteScroll, Text } from 'grommet';
+import { Box, Button, Heading, InfiniteScroll, Text } from 'grommet';
 import listing1 from './../../../media/listing1.jpg';
 import listing2 from './../../../media/listing2.jpg'
 import listing3 from './../../../media/listing3.jpg'
@@ -54,6 +54,10 @@ const ListingsList = (props) => {
     },
   ];
 
+  const handleClick = () => {
+    props.setShow(true);
+  } 
+
   return (
     <Box width="100%" direction="column">
       <Heading level="3">Real Estate & Homes for {props.title}</Heading>
@@ -66,9 +70,11 @@ const ListingsList = (props) => {
           key={index}
           direction="row"
         >
+          <Button onClick={() => handleClick()}>
           <CardListing
             key={item.id} 
             home={item}  />
+          </Button>
         </Box>      
       )}
     </InfiniteScroll>
